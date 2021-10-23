@@ -1,4 +1,12 @@
+/**
+ * Clase que aplica el patrón Template.
+ */
 public class HamburguesaCarnivora{
-    System.out.println("jaja");
-    System.out.println("jeje");
+  /**
+   * Crea una hamburguesa carnívora.
+   * 
+  public HamburguesaCarnivora(){
+  
+  }
+  */
 }
