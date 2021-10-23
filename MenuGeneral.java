@@ -1,18 +1,36 @@
+import java.lang.Iterable;
+import java.util.Iterator;
+
 /**
  * Clase que implementa los métodos de la clase principal Menu.
  */
-public class MenuGeneral implements Menu{
-  //implements Iterable{
+public class MenuGeneral implements Iterable{
 
-  /**
-   * Arreglo de platillos.
-   */
-  protected Plato[] platillos;
-  
-  /**
-   * Implementa el método de la clase principal y muestra los platillos del menú general.
-   */
-  public void mostrarPlatillos(){
-    System.out.println(platillos);
-  }
+    protected class IteradorGeneral implements Iterator{
+
+	int indice = 0;
+
+	public boolean hasNext(){
+	    if(this.indice < platillos.length-1)return true;
+	    return false;
+	}
+
+	public Plato next(){
+	    Plato plato = platillos[indice];
+	    this.indice++;
+	    return plato;
+	}
+	
+    }
+    
+    
+    
+    /**
+     * Arreglo de platillos.
+     */
+    protected Plato[] platillos;
+
+    @Override public IteradorGeneral iterator(){
+	return new IteradorGeneral();
+    }
 }
