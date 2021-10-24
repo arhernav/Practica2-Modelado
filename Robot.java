@@ -2,7 +2,7 @@ public class Robot{
   
   public MenuGeneral menuGeneral;
   public MenuDiario menuDiario;
-  public Menu Especial menuEspecial;
+  public MenuEspecial menuEspecial;
   public EstadoRobot estadoActual;
   public ModoSuspedido estadoSuspendido;
   public ModoActivado estadoActivado;
