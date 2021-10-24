@@ -21,27 +21,27 @@ public abstract class Plato{
      * Este hace uso de todos los demas metodos auxiliares de esta clase
      */
     public void prepararPlatillo(){
-	this.ponerBase();
-	this.ponerMayonesa();
-	this.ponerMostasa();
-	this.ponerCarne();
-	this.ponerQueso();
-	this.ponerVegetales();
-	this.ponerCatsup();
-	this.ponerTapa();
-	System.out.println("Hamburguesa terminada");
+ this.ponerBase();
+ this.ponerMayonesa();
+ this.ponerMostaza();
+ this.ponerCarne();
+ this.ponerQueso();
+ this.ponerVegetales();
+ this.ponerCatsup();
+ this.ponerTapa();
+ System.out.println("Hamburguesa terminada");
     }
 
     private void ponerBase(){
-	System.out.println("Colocando el pan inferior de la hamburguesa");
+ System.out.println("Colocando el pan inferior de la hamburguesa");
     }
 
     private void ponerMayonesa(){
-	System.out.println("Añadiendo la mayonesa");
+ System.out.println("Añadiendo la mayonesa");
     }
 
-    private void ponerMostasa(){
-	System.out.println("Añadiendo la mostasa");
+    private void ponerMostaza(){
+ System.out.println("Añadiendo la mostaza");
     }
 
     abstract String prepararCarne();
@@ -51,21 +51,21 @@ public abstract class Plato{
     }
 
     private void ponerQueso(){
-	if(this.queso){
-	    System.out.println("Añadiendo Queso");
-	}
+ if(this.queso){
+     System.out.println("Añadiendo Queso");
+ }
     }
 
     private void ponerVegetales(){
-	System.out.println("Añadiendo un conjunto de tomate, lechuga y cebolla");
+ System.out.println("Añadiendo un conjunto de tomate, lechuga y cebolla");
     }
 
     private void ponerCatsup(){
-	System.out.println("Añadiendo la catsup");
+ System.out.println("Añadiendo la catsup");
     }
 
     private void ponerTapa(){
-	System.out.println("Añadiendo la tapa de la hamburguesa");
+ System.out.println("Añadiendo la tapa de la hamburguesa");
     }
     
 }
