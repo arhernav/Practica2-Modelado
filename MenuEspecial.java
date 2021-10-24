@@ -18,7 +18,7 @@ public class MenuEspecial implements Iterable{
 	}
 
 	public Plato next(){
-	    return new Plato();
+	    return new HamburguesaCarnivora(0, "plato prueba", "Primer platillo de prueba", 3.24, true, true);
 	}
     }
 
