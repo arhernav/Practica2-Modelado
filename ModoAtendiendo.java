@@ -1,8 +1,8 @@
-public class ModoCocinando implements EstadoRobot{
+public class ModoAtendiendo implements EstadoRobot{
 
   public Robot cocinero;
   
-  public ModoCocinando(Robot cocinero){
+  public ModoAtendiendo(Robot cocinero){
     this.cocinero = cocinero;
   }
   
