@@ -6,11 +6,12 @@ public class ModoSuspendido implements EstadoRobot{
   }
 
   @Override public void suspender(){
-      this.cocinero.setEstado(cocinero.getEstadoActual());
+      System.out.println("El robot ya esta suspendido");
   }
 
   @Override public void activar(){
-      this.cocinero.setEstado(cocinero.getEstadoActual());
+      System.out.println("El robot esta ahora activado");
+      this.cocinero.setEstadoActual(this.cocinero.getEstadoActivado());
   }
 
   @Override public void caminar(){
