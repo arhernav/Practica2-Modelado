@@ -39,19 +39,19 @@ public class Robot{
   }
   
   public void activar(){
-    this.estadoActivado.activar();
+    this.estadoActual.activar();
   }
   
   public void caminar(){
-    this.estadoActivado.caminar();
+    this.estadoActual.caminar();
   }
   
   public void atender(){
-    this.estadoActivado.atender();
+    this.estadoActual.atender();
   } 
   
   public void cocinar(){
-    this.estadoActivado.cocinar();
+    this.estadoActual.cocinar();
   }
   
 }
