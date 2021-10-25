@@ -6,23 +6,23 @@ public class ModoSuspendido implements EstadoRobot{
   }
 
   @Override public void suspender(){
-      System.out.println("El robot ya esta suspendido");
+    System.out.println("El robot ya esta suspendido");
   }
 
   @Override public void activar(){
-      System.out.println("El robot esta ahora activado");
-      this.cocinero.setEstadoActual(this.cocinero.getEstadoActivado());
+    System.out.println("El robot esta ahora activado");
+    this.cocinero.setEstadoActual(this.cocinero.getEstadoActivado());
   }
 
   @Override public void caminar(){
-      this.cocinero.setEstado(cocinero.getEstadoActual());
+    System.out.println("El robot debe de ser activado antes de poder caminar");
   }
 
   @Override public void atender(){
-      this.cocinero.setEstado(cocinero.getEstadoActual());
+    System.out.println("El robot debe de ser activado antes de poder atender");
   }
 
   @Override public void cocinar(){
-      this.cocinero.setEstado(cocinero.getEstadoActual());
+    System.out.println("El robot debe de ser activado antes de poder cocinar");
   }
 }
