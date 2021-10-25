@@ -3,27 +3,29 @@ public class ModoActivado implements EstadoRobot{
   Robot cocinero;
     
   public ModoActivado(Robot cocinero){
-      this.cocinero = cocinero;
+    this.cocinero = cocinero;
   }
 
 
   @Override public void suspender(){
-      this.cocinero.setEstado(cocinero.getEstadoActual());
+    System.out.println("Si realmente no querias nada no debiste de activar el robot, "
+		       + "ahora haz que el robot se acerque hacia ti, "
+		       + "no puede cocinar si no se acerca");
   }
 
   @Override public void activar(){
-      this.cocinero.setEstado(cocinero.getEstadoActual());
+    System.out.println("El robot ya esta activo");
   }
 
   @Override public void caminar(){
-      this.cocinero.setEstado(cocinero.getEstadoActual());
+    System.out.println("El robot comenzara a caminar hacia tu mesa");
   }
 
   @Override public void atender(){
-      this.cocinero.setEstado(cocinero.getEstadoActual());
+    System.out.println("El robot no puede atender si no se acerca a la mesa");
   }
 
   @Override public void cocinar(){
-      this.cocinero.setEstado(cocinero.getEstadoActual());
+    System.out.println("El robot no puede cocinar si no se acerca a la mesa");
   }
 }
