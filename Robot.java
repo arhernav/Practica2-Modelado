@@ -35,7 +35,7 @@ public class Robot{
   }
   
   public void suspender(){
-    this.estadoActivado.suspender();
+    this.estadoActual.suspender();
   }
   
   public void activar(){
