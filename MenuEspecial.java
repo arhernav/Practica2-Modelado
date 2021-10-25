@@ -26,7 +26,11 @@ public class MenuEspecial implements Iterable{
   /**
    * Tabla de platillos.
    */
-  protected Hashtable<String, Plato>  platillos;
+  protected Hashtable<Integer, Plato>  platillos;
+
+    public MenuEspecial(){
+	this.platillos = new Hashtable<Integer, Plato>();
+    }
     
   /**
    * Metodo iterator

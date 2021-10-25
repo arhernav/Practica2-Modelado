@@ -1,37 +1,41 @@
+import java.util.Hashtable;
+
 public class Robot{
   
   public MenuGeneral menuGeneral;
   public MenuDiario menuDiario;
   public MenuEspecial menuEspecial;
   public EstadoRobot estadoActual;
-  public ModoSuspedido estadoSuspendido;
+  public ModoSuspendido estadoSuspendido;
   public ModoActivado estadoActivado;
-  public ModoCamimando estadoCaminando;
+  public ModoCaminando estadoCaminando;
   public ModoAtendiendo estadoAtendiendo;
   public ModoCocinando estadoCocinando;
+  public Plato platoPorCocinar;
+  public Hashtable<Integer, Plato> ConjuntoMenus;
   
   public void setEstadoActual(EstadoRobot estadoPorAsignar){
     this.estadoActual = estadoPorAsignar;
   }
   
   public EstadoRobot getEstadoSuspendido(){
-    return estadoSuspendido;
+    return this.estadoSuspendido;
   }
   
   public EstadoRobot getEstadoActivado(){
-    return estadoActivado;
+    return this.estadoActivado;
   }
   
   public EstadoRobot getEstadoCaminando(){
-    return estadoCaminando;
+    return this.estadoCaminando;
   }
   
   public EstadoRobot getEstadoAtendiendo(){
-    return estadoAtendiendo;
+    return this.estadoAtendiendo;
   }
   
   public EstadoRobot getEstadoCocinando(){
-    return estadoCocinando;
+    return this.estadoCocinando;
   }
   
   public void suspender(){
@@ -53,5 +57,8 @@ public class Robot{
   public void cocinar(){
     this.estadoActual.cocinar();
   }
+
+  
+  
   
 }

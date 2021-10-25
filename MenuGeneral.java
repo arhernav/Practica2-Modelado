@@ -27,6 +27,7 @@ public class MenuGeneral implements Iterable{
    * Arreglo de platillos.
    */
   protected Plato[] platillos;
+
   
   @Override public IteradorGeneral iterator(){
     return new IteradorGeneral();
