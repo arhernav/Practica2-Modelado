@@ -13,7 +13,7 @@ public class ModoAtendiendo implements EstadoRobot{
   
   @Override
   public void activar(){
-    Systm.out.println("El robot ya está activado.");
+    System.out.println("El robot ya está activado.");
   }
   
   @Override
