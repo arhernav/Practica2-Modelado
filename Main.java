@@ -2,13 +2,13 @@ import java.util.Iterator;
 public class Main{
     
     public static void main(String[] args){
-	/*MenuDiario menuDiario = new MenuDiario();
+	MenuDiario menuDiario = new MenuDiario();
 	MenuGeneral menuGeneral = new MenuGeneral();
 	MenuEspecial menuEspecial = new MenuEspecial();
 	Iterator iteradorGeneral = menuGeneral.iterator();
 	Iterator iteradorDiario = menuDiario.iterator();
 	Iterator iteradorEspecial = menuEspecial.iterator();
-        */
+        
 
 	Robot robot = new Robot();
 	/*
@@ -43,11 +43,17 @@ public class Main{
 	robot.cocinar();
 	System.out.println(robot.estadoActual);
 	*/
-	Iterator iteradorConjunto = robot.conjuntoMenus.values().iterator();
-	while(iteradorConjunto.hasNext()){
-	    System.out.println(iteradorConjunto.next());
-	}
-	System.out.println(robot.conjuntoMenus.get(11));
-	robot.conjuntoMenus.get(11).prepararPlatillo();
+
+	robot.agregaMenu(menuGeneral.iterator());
+	/*robot.muestraConjuntoMenus();
+	System.out.println();*/
+	robot.agregaMenu(menuDiario.iterator());
+	/*robot.muestraConjuntoMenus();
+	System.out.println();*/
+	robot.agregaMenu(menuEspecial.iterator());
+	/*robot.muestraConjuntoMenus();
+	System.out.println();*/
+	int ordenRecibida = robot.recibirOrden();
+        System.out.println(ordenRecibida);
     }
 }
