@@ -21,14 +21,31 @@ public class Robot{
 	this.menuGeneral = new MenuGeneral();
 	this.menuDiario = new MenuDiario();
 	this.menuEspecial = new MenuEspecial();
-	this.conjuntoMenus = new  Hashtable<Integer, Plato>();
 	this.estadoSuspendido = new ModoSuspendido(this);
 	this.estadoActivado = new ModoActivado(this);
 	this.estadoCaminando = new ModoCaminando(this);
 	this.estadoAtendiendo = new ModoAtendiendo(this);
 	this.estadoCocinando = new ModoCocinando(this);
 	this.estadoActual = this.estadoSuspendido;
-    }  
+	this.conjuntoMenus = new  Hashtable<Integer, Plato>();
+	this.creaConjuntoMenu();
+    }
+
+    private void creaConjuntoMenu(){
+	Plato plato;
+	for(Object objeto: this.menuGeneral){
+	    plato = (Plato) objeto;
+	    conjuntoMenus.put(plato.id, plato);
+	}
+	for(Object objeto: this.menuDiario){
+	    plato = (Plato) objeto;
+	    conjuntoMenus.put(plato.id, plato);
+	}
+	for(Object objeto: this.menuEspecial){
+	    plato = (Plato) objeto;
+	    conjuntoMenus.put(plato.id, plato);
+	}
+    }
   
   public void setEstadoActual(EstadoRobot estadoPorAsignar){
     this.estadoActual = estadoPorAsignar;
@@ -89,8 +106,15 @@ public class Robot{
 	this.muestraMenu(iteradorEspecial);
     }
 
-    public void recibirOrden(){
+    public int recibirOrden(){
 	Scanner scanner = new Scanner(System.in);
+	int orden;
+	if(scanner.hasNextInt()){
+	    orden = scanner.nextInt();
+	}else{
+	    orden = 1;
+	}
+	return orden;
     }
   
   
