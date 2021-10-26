@@ -11,9 +11,9 @@ public class MenuDiario implements Iterable{
    */
   protected ArrayList<Plato> platillos;
 
-    public MenuDiario(){
-	this.platillos = new ArrayList<Plato>();
-    }
+  public MenuDiario(){
+    this.platillos = new ArrayList<Plato>();
+  }
 
   @Override public Iterator iterator(){
     return platillos.iterator();

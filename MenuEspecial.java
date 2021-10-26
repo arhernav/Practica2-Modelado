@@ -13,13 +13,16 @@ public class MenuEspecial implements Iterable{
   ////////////////E implementar////////////////////////////
   protected class IteradorEspecial implements Iterator{ 
     
+    protected Iterator iteradorColeccion = platillos.values().iterator();
+    
+    
     public boolean hasNext(){
-      return true;
+      return iteradorColeccion.hasNext();
     }
     
     public Plato next(){
-      return new HamburguesaCarnivora(0, "plato prueba", "Primer platillo de prueba", 3.24, true, true);
-    }
+      return platillos.get(iteradorColeccion.next());
+    } 
   }
   
 
@@ -28,9 +31,9 @@ public class MenuEspecial implements Iterable{
    */
   protected Hashtable<Integer, Plato>  platillos;
 
-    public MenuEspecial(){
-	this.platillos = new Hashtable<Integer, Plato>();
-    }
+  public MenuEspecial(){
+    this.platillos = new Hashtable<Integer, Plato>();
+  }
     
   /**
    * Metodo iterator
