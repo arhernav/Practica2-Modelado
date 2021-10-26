@@ -5,6 +5,10 @@ public class ModoSuspendido implements EstadoRobot{
     this.cocinero = cocinero;
   }
 
+    @Override public String toString(){
+	return "Modo suspendido";
+    }  
+
   @Override public void suspender(){
     System.out.println("El robot ya esta suspendido");
   }

@@ -38,6 +38,7 @@ public abstract class Plato{
      * Este hace uso de todos los demas metodos auxiliares de esta clase
      */
     public void prepararPlatillo(){
+	System.out.println("Preparando la hamburguesa: " + this.id + ".-" + this.nombrePlatillo);
  this.ponerBase();
  this.ponerMayonesa();
  this.ponerMostaza();

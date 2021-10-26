@@ -6,7 +6,10 @@ public class ModoActivado implements EstadoRobot{
     this.cocinero = cocinero;
   }
 
-
+    @Override public String toString(){
+	return "Modo activado";
+    }
+    
   @Override public void suspender(){
     System.out.println("Si realmente no querias nada no debiste de activar el robot, "
 		       + "ahora haz que el robot se acerque hacia ti, "
@@ -19,6 +22,7 @@ public class ModoActivado implements EstadoRobot{
 
   @Override public void caminar(){
     System.out.println("El robot comenzara a caminar hacia tu mesa");
+    this.cocinero.setEstadoActual(this.cocinero.getEstadoCaminando());
   }
 
   @Override public void atender(){

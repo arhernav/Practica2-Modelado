@@ -5,6 +5,10 @@ public class ModoAtendiendo implements EstadoRobot{
   public ModoAtendiendo(Robot cocinero){
     this.cocinero = cocinero;
   }
+
+    @Override public String toString(){
+	return "Modo atendiendo";
+    }
   
   @Override
   public void suspender(){
@@ -23,14 +27,13 @@ public class ModoAtendiendo implements EstadoRobot{
   
   @Override
   public void atender(){
-    System.out.println("El robot l@ atenderá.");
-    this.cocinero.setEstadoActual(this.cocinero.getEstadoAtendiendo());
+    System.out.println("Falta implementar el recibir la orden");
+    this.cocinero.setEstadoActual(this.cocinero.getEstadoCocinando());
   }
   
   @Override
   public void cocinar(){
-    System.out.println("El robot ha tomado su orden, comenzará a cocinar.");
-    this.cocinero.setEstadoActual(this.cocinero.getEstadoCocinando());
+    System.out.println("El robot no  puede empezar a cocinar si no le has dado una orden");
   }
   
 }
