@@ -2,35 +2,46 @@ import java.lang.Iterable;
 import java.util.Iterator;
 
 /**
- * Clase que implementa los métodos de la clase principal Menu.
+ * Clase que implementa los métodos de la clase principal Menu y aplica el patrón Iterator.
  */
 public class MenuGeneral implements Iterable{
   
+  /**
+   * Clase interna que itera los elementos del arreglo platillos.
+   */
   protected class IteradorGeneral implements Iterator{
-    
+    /* Indica donde se encuentra el iterador */
     int indice = 0;
     
+    /**
+     * Método que se asegura de que haya un elemento siguiente en el arreglo de platillos.
+     * @return boolean Elemento siguiente.
+     */
     public boolean hasNext(){
       if(this.indice < platillos.length)return true;
       return false;
     }
     
+    /**
+     * Método que devuelve los elementos del arreglo platillos.
+     * @return plato Tipo de hamburguesa.
+     */
     public Plato next(){
       Plato plato = platillos[indice];
       this.indice++;
       return plato;
     }
   }
-    
-  
-  /**
-   * Arreglo de platillos.
-   */
+      
+  /* Arreglo de platillos */
   protected Plato[] platillos;
   
+  /**
+   * Método que crea tres hamburguesas para el menú general.
+   */
   public MenuGeneral(){
     this.platillos = new Plato[3];
-    platillos[0] = new HamburguesaVegana(11, "Hamburguesa vegetariana neutral.",
+    platillos[0] = new HamburguesaVegana(11, "Hamburguesa vegana neutral.",
                                              "Tofu, lechuga, tomate, cebolla, mostaza, mayonesa, catsup, queso.",
                                               49.70, true, true);
     platillos[1] = new HamburguesaCarnivora(12, "Hamburguesa carne cocida.",
@@ -41,8 +52,11 @@ public class MenuGeneral implements Iterable{
                                             22.00, false, false);
   }
   
+  /**
+   * Método iterator que devuelve un iterador para este menú.
+   * @return IteradorGeneral - Iterador del menú
+   */
   @Override public IteradorGeneral iterator(){
     return new IteradorGeneral();
   }
-  
 }

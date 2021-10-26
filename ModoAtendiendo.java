@@ -7,7 +7,7 @@ public class ModoAtendiendo implements EstadoRobot{
   }
 
     @Override public String toString(){
-	return "Modo atendiendo";
+ return "Modo atendiendo";
     }
   
   @Override
@@ -35,5 +35,4 @@ public class ModoAtendiendo implements EstadoRobot{
   public void cocinar(){
     System.out.println("El robot no  puede empezar a cocinar si no le has dado una orden");
   }
-  
 }

@@ -6,7 +6,7 @@ public class ModoCocinando implements EstadoRobot{
     this.cocinero = cocinero;
   }
     @Override public String toString(){
-	return "Modo cocinando";
+ return "Modo cocinando";
     }
   
   @Override
@@ -34,5 +34,4 @@ public class ModoCocinando implements EstadoRobot{
     System.out.println("El robot comenzará a cocinar.");
     this.cocinero.setEstadoActual(this.cocinero.getEstadoSuspendido());
   }
-  
 }
