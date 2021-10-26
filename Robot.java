@@ -3,10 +3,6 @@ import java.util.Scanner;
 import java.util.Iterator;
 
 public class Robot{
-  
-  public MenuGeneral menuGeneral;
-  public MenuDiario menuDiario;
-  public MenuEspecial menuEspecial;
   public Hashtable<Integer, Plato> conjuntoMenus;
   public EstadoRobot estadoActual;
   public ModoSuspendido estadoSuspendido;
@@ -18,9 +14,6 @@ public class Robot{
 
 
     public Robot(){
-	this.menuGeneral = new MenuGeneral();
-	this.menuDiario = new MenuDiario();
-	this.menuEspecial = new MenuEspecial();
 	this.estadoSuspendido = new ModoSuspendido(this);
 	this.estadoActivado = new ModoActivado(this);
 	this.estadoCaminando = new ModoCaminando(this);
@@ -28,22 +21,12 @@ public class Robot{
 	this.estadoCocinando = new ModoCocinando(this);
 	this.estadoActual = this.estadoSuspendido;
 	this.conjuntoMenus = new  Hashtable<Integer, Plato>();
-	this.creaConjuntoMenu();
     }
 
-    private void creaConjuntoMenu(){
-	Plato plato;
-	for(Object objeto: this.menuGeneral){
-	    plato = (Plato) objeto;
-	    conjuntoMenus.put(plato.id, plato);
-	}
-	for(Object objeto: this.menuDiario){
-	    plato = (Plato) objeto;
-	    conjuntoMenus.put(plato.id, plato);
-	}
-	for(Object objeto: this.menuEspecial){
-	    plato = (Plato) objeto;
-	    conjuntoMenus.put(plato.id, plato);
+    public void agregaMenu(Iterator iterador){
+	while(iterador.hasNext()){
+	    Plato plato = (Plato) iterador.next();
+	    this.conjuntoMenus.put(plato.id, plato);
 	}
     }
   
@@ -98,23 +81,38 @@ public class Robot{
     }
 
     public void muestraConjuntoMenus(){
-	Iterator iteradorGeneral = this.menuGeneral.iterator();
-	Iterator iteradorDiario = this.menuDiario.iterator();
-	Iterator iteradorEspecial = this.menuEspecial.iterator();
-	this.muestraMenu(iteradorGeneral);
-	this.muestraMenu(iteradorDiario);
-	this.muestraMenu(iteradorEspecial);
+        Iterator iteradorConjunto = this.conjuntoMenus.values().iterator();
+	while(iteradorConjunto.hasNext()){
+	    System.out.println(iteradorConjunto.next());
+	}
     }
 
     public int recibirOrden(){
-	Scanner scanner = new Scanner(System.in);
-	int orden;
-	if(scanner.hasNextInt()){
-	    orden = scanner.nextInt();
-	}else{
-	    orden = 1;
-	}
+	Scanner scan = new Scanner(System.in);
+	Integer orden = 0;
+        do{
+	    System.out.print("Ingrese el id de la hamburguesa que quiere: ");
+        if(scan.hasNextInt()){
+            orden = scan.nextInt();
+	    if(!this.checarOrdenValida(orden))
+		System.out.println("Recuerda que debes de ordenar con un id" +
+				   " valido. El id es el numero que aparece antes" +
+				   " del nombre de la hamburguesa");
+        }else{
+            scan.nextLine();
+            System.out.println("Recuerda que debes de ordenar con un id" +
+				   " valido. El id es el numero que aparece antes" +
+				   " del nombre de la hamburguesa");
+        }
+	}while(!this.checarOrdenValida(orden));
 	return orden;
+    }
+    
+    public boolean checarOrdenValida(Integer id){
+	for(Plato plato:this.conjuntoMenus.values()){
+	    if(plato.id == id) return true;
+	}
+	return false;
     }
   
   
