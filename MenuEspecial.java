@@ -30,9 +30,21 @@ public class MenuEspecial implements Iterable{
    * Tabla de platillos.
    */
   protected Hashtable<Integer, Plato>  platillos;
-
+  HamburguesaCarnivora plus = new HamburguesaCarnivora(1, "Hamburguesa plus",
+                                                       "Lechuga, queso, carne de res, mayonesa, mostaza, tomate, cebolla, catsup."
+                                                       71.15, True, False);
+  HamburguesaCarnivora normal = new HamburguesaCarnivora(2, "Hamburguesa normal",
+                                                         "Lechuga, carne de res, mayonesa, mostaza, tomate, catsup, cebolla.",
+                                                         64.95, False, False);
+  HamburguesaVegetariana comun = new HamburguesaVegetariana(3, "Hamburguesa común",
+                                                            "Lechuga, carne de res, mayonesa, mostaza, tomate, catsup, cebolla, queso.",
+                                                            58.30, True, True);
+  
   public MenuEspecial(){
     this.platillos = new Hashtable<Integer, Plato>();
+    platillos.put(1, plus);
+    platillos.put(2, normal);
+    platillos.put(3, comun);
   }
     
   /**
