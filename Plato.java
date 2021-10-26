@@ -16,22 +16,21 @@ public abstract class Plato{
     /* Boolean indicando si es vegetariana o no */
     boolean vegetariano;
 
-
     @Override public String toString(){
-	String conQueso;
-	String esVegetariana;
-	if(this.queso){
-	    conQueso = "Hamburguesa con queso";
-	}else{
-	    conQueso = "Hamburguesa sin queso";
-	}
-	if(this.vegetariano){
-	    esVegetariana = " y vegetariana";
-	}else{
-	    esVegetariana = "";
-	}
-	return this.id + ".- " + this.nombrePlatillo + ": " + this.descripcion +
-	    " Precio: $" + this.precio + ". " + conQueso + esVegetariana;
+ String conQueso;
+ String esVegetariana;
+ if(this.queso){
+     conQueso = "Hamburguesa con queso";
+ }else{
+     conQueso = "Hamburguesa sin queso";
+ }
+ if(this.vegetariano){
+     esVegetariana = " y vegetariana";
+ }else{
+     esVegetariana = "";
+ }
+ return this.id + ".- " + this.nombrePlatillo + ": " + this.descripcion +
+     " Precio: $" + this.precio + ". " + conQueso + esVegetariana;
     }
     
     /**
