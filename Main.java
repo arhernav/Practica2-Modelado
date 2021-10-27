@@ -15,25 +15,66 @@ public class Main{
     robot.agregaMenu(menuEspecial.iterator());
     
     System.out.println("¡Bienvenid@ a McBurguesas!");
+
+    //Comienzo del menu interactivo
     while(!finalizarPrograma){
-      System.out.println(robot.getEstadoActual());
+	
+	//Declaracion de  objetos
+      System.out.println("\nEl  robot esta actualmente en " + robot.getEstadoActual());
       int opcionElegida = 7;
       Scanner escaner= new Scanner(System.in);
       boolean opcionValida = false;
+
+
+      System.out.println("Por favor ingrese la opcion que le gustaria que realizara el robot");
+      System.out.println("1.- Suspender");
+      System.out.println("2.- Activar");
+      System.out.println("3.- Caminar");
+      System.out.println("4.- Atender");
+      System.out.println("5.- Cocinar");
+      System.out.println("6.- Finalizar el programa");
+      System.out.println("Ingrese el digito de la opcion que quiere");
       
+      //Seleccion de opcion
       do{
         if(escaner.hasNextInt()){
           opcionElegida = escaner.nextInt();
           if(opcionElegida <= 6){
             opcionValida = true;
           }
-        }else{
+        }else{    
           escaner.nextLine();
+	  System.out.println("Recuerda que debes de ingresar solo un digito y este debe de concordar con alguna de las opciones del menu de arriba");
         }
       }while(!opcionValida);
       
       switch(opcionElegida){
-        case 6: 
+      case 1:
+	  System.out.println();
+	  robot.suspender();
+	  System.out.println();
+	  break;
+      case 2:
+	  System.out.println();
+	  robot.activar();
+	  System.out.println();
+	  break;
+      case 3:
+	  System.out.println();
+	  robot.caminar();
+	  System.out.println();
+	  break;
+      case 4:
+	  System.out.println();
+	  robot.atender();
+	  System.out.println();
+	  break;
+      case 5:
+	  System.out.println();
+	  robot.cocinar();
+	  System.out.println();
+	  break;
+      case 6: 
           finalizarPrograma = true;
           break;
         default: 
@@ -41,51 +82,5 @@ public class Main{
       }
       
     }
-
-    System.out.println(robot.getEstadoActual());
-    robot.activar();
-    System.out.println(robot.getEstadoActual());
-    robot.caminar();
-    System.out.println(robot.getEstadoActual());
-    robot.atender();
-    System.out.println(robot.getEstadoActual());
-    robot.atender();
-    System.out.println(robot.getEstadoActual());
-    robot.cocinar();
-    System.out.println(robot.getEstadoActual());
-    
-    
-    /*
-     System.out.println(robot.estadoActual);
-     robot.cocinar();
-     robot.caminar();
-     robot.atender();
-     robot.suspender();
-     robot.activar();
-     System.out.println(robot.estadoActual);
-     robot.cocinar();
-     robot.atender();
-     robot.suspender();
-     robot.activar();
-     robot.caminar();
-     System.out.println(robot.estadoActual);
-     robot.cocinar();
-     robot.activar();
-     robot.caminar();
-     robot.atender();
-     System.out.println(robot.estadoActual);
-     robot.cocinar();
-     robot.suspender();
-     robot.activar();
-     robot.caminar();
-     robot.atender();
-     System.out.println(robot.estadoActual);
-     robot.suspender();
-     robot.activar();
-     robot.caminar();
-     robot.atender();
-     robot.cocinar();
-     System.out.println(robot.estadoActual);
-    */
   }
 }
