@@ -14,24 +14,28 @@ public class Robot{
 
 
     public Robot(){
-	this.estadoSuspendido = new ModoSuspendido(this);
-	this.estadoActivado = new ModoActivado(this);
-	this.estadoCaminando = new ModoCaminando(this);
-	this.estadoAtendiendo = new ModoAtendiendo(this);
-	this.estadoCocinando = new ModoCocinando(this);
-	this.estadoActual = this.estadoSuspendido;
-	this.conjuntoMenus = new  Hashtable<Integer, Plato>();
+ this.estadoSuspendido = new ModoSuspendido(this);
+ this.estadoActivado = new ModoActivado(this);
+ this.estadoCaminando = new ModoCaminando(this);
+ this.estadoAtendiendo = new ModoAtendiendo(this);
+ this.estadoCocinando = new ModoCocinando(this);
+ this.estadoActual = this.estadoSuspendido;
+ this.conjuntoMenus = new  Hashtable<Integer, Plato>();
     }
 
     public void agregaMenu(Iterator iterador){
-	while(iterador.hasNext()){
-	    Plato plato = (Plato) iterador.next();
-	    this.conjuntoMenus.put(plato.id, plato);
-	}
+ while(iterador.hasNext()){
+     Plato plato = (Plato) iterador.next();
+     this.conjuntoMenus.put(plato.id, plato);
+ }
     }
   
   protected void setEstadoActual(EstadoRobot estadoPorAsignar){
     this.estadoActual = estadoPorAsignar;
+  }
+  
+  protected String getEstadoActual(){
+    return this.estadoActual.toString();
   }
   
   protected EstadoRobot getEstadoSuspendido(){
@@ -75,55 +79,55 @@ public class Robot{
   }
 
     public void muestraMenu(Iterator iterador){
-	while(iterador.hasNext()){
-	    System.out.println(iterador.next());
-	}
+ while(iterador.hasNext()){
+     System.out.println(iterador.next());
+ }
     }
 
     public void muestraConjuntoMenus(){
         Iterator iteradorConjunto = this.conjuntoMenus.values().iterator();
-	while(iteradorConjunto.hasNext()){
-	    System.out.println(iteradorConjunto.next());
-	}
+ while(iteradorConjunto.hasNext()){
+     System.out.println(iteradorConjunto.next());
+ }
     }
 
     protected int recibirOrden(){
-	Scanner scan = new Scanner(System.in);
-	Integer orden = 0;
+ Scanner scan = new Scanner(System.in);
+ Integer orden = 0;
         do{
-	    System.out.print("Ingrese el id de la hamburguesa que quiere: ");
+     System.out.print("Ingrese el id de la hamburguesa que quiere: ");
         if(scan.hasNextInt()){
             orden = scan.nextInt();
-	    if(!this.checarOrdenValida(orden))
-		System.out.println("Recuerda que debes de ordenar con un id" +
-				   " valido. El id es el numero que aparece antes" +
-				   " del nombre de la hamburguesa");
+     if(!this.checarOrdenValida(orden))
+  System.out.println("Recuerda que debes de ordenar con un id" +
+       " valido. El id es el numero que aparece antes" +
+       " del nombre de la hamburguesa");
         }else{
             scan.nextLine();
             System.out.println("Recuerda que debes de ordenar con un id" +
-				   " valido. El id es el numero que aparece antes" +
-				   " del nombre de la hamburguesa");
+       " valido. El id es el numero que aparece antes" +
+       " del nombre de la hamburguesa");
         }
-	}while(!this.checarOrdenValida(orden));
-	return orden;
+ }while(!this.checarOrdenValida(orden));
+ return orden;
     }
     
     protected boolean checarOrdenValida(Integer id){
-	for(Plato plato:this.conjuntoMenus.values()){
-	    if(plato.id == id) return true;
-	}
-	return false;
+ for(Plato plato:this.conjuntoMenus.values()){
+     if(plato.id == id) return true;
+ }
+ return false;
     }
 
     protected void setPlatoPorCocinar(int platoPorCocinar){
-	this.platoPorCocinar = platoPorCocinar;
+ this.platoPorCocinar = platoPorCocinar;
     }
 
     protected  Plato getPlatoPorCocinar(){
         for(Plato plato: this.conjuntoMenus.values()){
-	    if(plato.id == this.platoPorCocinar) return plato;
-	}
-	return null;
+     if(plato.id == this.platoPorCocinar) return plato;
+ }
+ return null;
     }
     
   
