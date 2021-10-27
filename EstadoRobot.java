@@ -1,5 +1,5 @@
 /**
- * Interfaz que contiene los estados del robot.
+ * Interfaz que contiene las acciones que puede realizar el robot en cada estado
  */
 public interface EstadoRobot{
   

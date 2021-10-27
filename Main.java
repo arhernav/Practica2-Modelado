@@ -40,10 +40,19 @@ public class Main{
           break;
       }
       
-    } 
-    
-    int ordenRecibida = robot.recibirOrden();
-    System.out.println(ordenRecibida);
+    }
+
+    System.out.println(robot.getEstadoActual());
+    robot.activar();
+    System.out.println(robot.getEstadoActual());
+    robot.caminar();
+    System.out.println(robot.getEstadoActual());
+    robot.atender();
+    System.out.println(robot.getEstadoActual());
+    robot.atender();
+    System.out.println(robot.getEstadoActual());
+    robot.cocinar();
+    System.out.println(robot.getEstadoActual());
     
     
     /*

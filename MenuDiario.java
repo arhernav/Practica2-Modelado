@@ -3,7 +3,8 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 /**
- * Clase que implementa los métodos de la clase principal Menu y aplica el patrón Iterator.
+ * Clase para emular el menu diario
+ * Esta guarda sus platillos en un <code>ArrayList<code>
  */
 public class MenuDiario implements Iterable{
   
@@ -11,7 +12,8 @@ public class MenuDiario implements Iterable{
   private ArrayList<Plato> platillos;
   
   /**
-   * Método que crea tres hamburguesas para el menú diario.
+   * Constructor de la clase.
+   * Crea tres hamburguesas para el menú diario.
    */
   public MenuDiario(){
     this.platillos = new ArrayList<Plato>();

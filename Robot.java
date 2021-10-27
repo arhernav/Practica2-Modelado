@@ -123,12 +123,9 @@ public class Robot{
  this.platoPorCocinar = platoPorCocinar;
     }
 
-    protected  Plato getPlatoPorCocinar(){
-        for(Plato plato: this.conjuntoMenus.values()){
-     if(plato.id == this.platoPorCocinar) return plato;
- }
- return null;
+    protected  Plato getPlatoPorCocinar(){	
+	return this.conjuntoMenus.get(this.platoPorCocinar);
     }
     
-  
+    
 }
