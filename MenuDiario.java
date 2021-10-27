@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class MenuDiario implements Iterable{
   
   /* Lista de platillos */
-  protected ArrayList<Plato> platillos;
+  private ArrayList<Plato> platillos;
   
   /**
    * Método que crea tres hamburguesas para el menú diario.
