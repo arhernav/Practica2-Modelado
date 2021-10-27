@@ -34,7 +34,7 @@ public class MenuGeneral implements Iterable{
   }
       
   /* Arreglo de platillos */
-  protected Plato[] platillos;
+  private Plato[] platillos;
   
   /**
    * Método que crea tres hamburguesas para el menú general.

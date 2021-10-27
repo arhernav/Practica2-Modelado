@@ -8,7 +8,7 @@ import java.util.Hashtable;
 public class MenuEspecial implements Iterable{ 
 
   /* Tabla de platillos */
-  protected Hashtable<Integer, Plato>  platillos;
+  private Hashtable<Integer, Plato>  platillos;
   
   /**
    * Método que crea tres hamburguesas para el menú especial.
