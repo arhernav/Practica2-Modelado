@@ -3,7 +3,8 @@ import java.util.Iterator;
 import java.util.Hashtable;
 
 /**
- * Clase que implementa los métodos de la clase principal Menu y aplica el patrón Iterator.
+ * Clase que modela el menu de hamburguesas especiales
+ * Guarda sus platillos en un HashTable
  */
 public class MenuEspecial implements Iterable{ 
 
@@ -11,7 +12,8 @@ public class MenuEspecial implements Iterable{
   private Hashtable<Integer, Plato>  platillos;
   
   /**
-   * Método que crea tres hamburguesas para el menú especial.
+   * Constructor de la clase
+   * Crea tres hamburguesas para el menú especial.
    */
   public MenuEspecial(){
     this.platillos = new Hashtable<Integer, Plato>();

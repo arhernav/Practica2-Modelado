@@ -2,7 +2,8 @@ import java.lang.Iterable;
 import java.util.Iterator;
 
 /**
- * Clase que implementa los métodos de la clase principal Menu y aplica el patrón Iterator.
+ * Clase que modela el menu general del restaurante
+ * Esta guarda sus platillos en un array
  */
 public class MenuGeneral implements Iterable{
   
@@ -37,7 +38,8 @@ public class MenuGeneral implements Iterable{
   private Plato[] platillos;
   
   /**
-   * Método que crea tres hamburguesas para el menú general.
+   * Constructor de la clase
+   * Crea tres hamburguesas para el menú general.
    */
   public MenuGeneral(){
     this.platillos = new Plato[3];
