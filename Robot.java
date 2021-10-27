@@ -3,14 +3,14 @@ import java.util.Scanner;
 import java.util.Iterator;
 
 public class Robot{
-  public Hashtable<Integer, Plato> conjuntoMenus;
-  public EstadoRobot estadoActual;
-  public ModoSuspendido estadoSuspendido;
-  public ModoActivado estadoActivado;
-  public ModoCaminando estadoCaminando;
-  public ModoAtendiendo estadoAtendiendo;
-  public ModoCocinando estadoCocinando;
-  public Plato platoPorCocinar;
+  protected Hashtable<Integer, Plato> conjuntoMenus;
+  protected EstadoRobot estadoActual;
+  protected ModoSuspendido estadoSuspendido;
+  protected ModoActivado estadoActivado;
+  protected ModoCaminando estadoCaminando;
+  protected ModoAtendiendo estadoAtendiendo;
+  protected ModoCocinando estadoCocinando;
+  protected Integer platoPorCocinar = 0;
 
 
     public Robot(){
@@ -30,27 +30,27 @@ public class Robot{
 	}
     }
   
-  public void setEstadoActual(EstadoRobot estadoPorAsignar){
+  protected void setEstadoActual(EstadoRobot estadoPorAsignar){
     this.estadoActual = estadoPorAsignar;
   }
   
-  public EstadoRobot getEstadoSuspendido(){
+  protected EstadoRobot getEstadoSuspendido(){
     return this.estadoSuspendido;
   }
   
-  public EstadoRobot getEstadoActivado(){
+  protected EstadoRobot getEstadoActivado(){
     return this.estadoActivado;
   }
   
-  public EstadoRobot getEstadoCaminando(){
+  protected EstadoRobot getEstadoCaminando(){
     return this.estadoCaminando;
   }
   
-  public EstadoRobot getEstadoAtendiendo(){
+  protected EstadoRobot getEstadoAtendiendo(){
     return this.estadoAtendiendo;
   }
   
-  public EstadoRobot getEstadoCocinando(){
+  protected EstadoRobot getEstadoCocinando(){
     return this.estadoCocinando;
   }
   
@@ -87,7 +87,7 @@ public class Robot{
 	}
     }
 
-    public int recibirOrden(){
+    protected int recibirOrden(){
 	Scanner scan = new Scanner(System.in);
 	Integer orden = 0;
         do{
@@ -108,12 +108,23 @@ public class Robot{
 	return orden;
     }
     
-    public boolean checarOrdenValida(Integer id){
+    protected boolean checarOrdenValida(Integer id){
 	for(Plato plato:this.conjuntoMenus.values()){
 	    if(plato.id == id) return true;
 	}
 	return false;
     }
-  
+
+    protected void setPlatoPorCocinar(int platoPorCocinar){
+	this.platoPorCocinar = platoPorCocinar;
+    }
+
+    protected  Plato getPlatoPorCocinar(){
+        for(Plato plato: this.conjuntoMenus.values()){
+	    if(plato.id == this.platoPorCocinar) return plato;
+	}
+	return null;
+    }
+    
   
 }

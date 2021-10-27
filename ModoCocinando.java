@@ -31,7 +31,15 @@ public class ModoCocinando implements EstadoRobot{
   
   @Override
   public void cocinar(){
-    System.out.println("El robot comenzará a cocinar.");
+    System.out.println("El robot comenzará a cocinar su pedido.");
+    Plato platoPorCocinar =  cocinero.getPlatoPorCocinar();
+    if(platoPorCocinar == null){
+	System.out.println("Lo sentimos, ha ocurrido un error");
+	return;
+    }
+    platoPorCocinar.prepararPlatillo();
+    cocinero.setPlatoPorCocinar(0);
+    System.out.println("Su platillo esta listo");
     this.cocinero.setEstadoActual(this.cocinero.getEstadoSuspendido());
   }
 }
