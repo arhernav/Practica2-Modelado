@@ -3,7 +3,7 @@
  */
 public class ModoActivado implements EstadoRobot{
 
-    /*Robot que implementa este estado*/  
+  /*Robot que implementa este estado*/  
   Robot cocinero;
 
     /**
