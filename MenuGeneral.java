@@ -23,7 +23,6 @@ public class MenuGeneral implements Iterable{
       return false;
     }
     
-    //-----------------------------------------------
     /**
      * Método que devuelve los elementos del arreglo platillos.
      * @return plato Tipo de hamburguesa.
@@ -34,6 +33,8 @@ public class MenuGeneral implements Iterable{
       return plato;
     }
   }
+  
+  //----------------------------------------------------------
       
   /* Arreglo de platillos */
   private Plato[] platillos;

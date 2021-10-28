@@ -14,9 +14,9 @@ public class ModoCaminando implements EstadoRobot{
   }
 
   /**
-    * Metodo toString
-    * @return String Representacion de la clase en String
-    */ 
+   * Metodo toString
+   * @return String Representacion de la clase en String
+   */ 
   @Override public String toString(){
     return "Modo caminando";
   }
@@ -34,7 +34,7 @@ public class ModoCaminando implements EstadoRobot{
    */  
   @Override public void activar(){
     System.out.println("El robot ya esta activado y se dirige hacia ti" +
-		       ", dale algo de tiempo, es robot cocinero, no carro de carreras");
+                       ", dale algo de tiempo, es robot cocinero, no carro de carreras");
   }
 
   /**
@@ -48,8 +48,8 @@ public class ModoCaminando implements EstadoRobot{
    * Define lo que realiza la accion atender cuando el robot esta en estado caminando
    */    
   @Override public void atender(){
-      System.out.println("El robot lo atendera ahora mismo");
-      this.cocinero.setEstadoActual(this.cocinero.getEstadoAtendiendo());
+    System.out.println("El robot lo atendera ahora mismo");
+    this.cocinero.setEstadoActual(this.cocinero.getEstadoAtendiendo());
   }
 
   /**
