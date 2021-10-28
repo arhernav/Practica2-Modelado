@@ -51,10 +51,10 @@ public class ModoAtendiendo implements EstadoRobot{
   @Override
   public void atender(){
       System.out.println("Esta es la coleccion de platillos que tenemos disponibles.\n" +
-			 "Que platillo le gustaría que le prepare el robot?\n");
+                         "Que platillo le gustaría que le prepare el robot?\n");
       cocinero.muestraConjuntoMenus();
       System.out.println("Por favor, introdusca el ID del platillo que quiere.\n" +
-			 "El ID es el numero que aparece al inicio de cada platillo, antes del nombre");
+                         "El ID es el numero que aparece al inicio de cada platillo, antes del nombre");
       cocinero.setPlatoPorCocinar(cocinero.recibirOrden());
       this.cocinero.setEstadoActual(this.cocinero.getEstadoCocinando());
   }

@@ -15,9 +15,9 @@ public class ModoCocinando implements EstadoRobot{
   }
 
   /**
-    * Metodo toString
-    * @return String Representacion de la clase en String
-    */    
+   * Metodo toString
+   * @return String Representacion de la clase en String
+   */    
   @Override public String toString(){
     return "Modo cocinando";
   }
@@ -62,8 +62,8 @@ public class ModoCocinando implements EstadoRobot{
     System.out.println("El robot comenzará a cocinar su pedido.");
     Plato platoPorCocinar =  cocinero.getPlatoPorCocinar();
     if(platoPorCocinar == null){
-	System.out.println("Lo sentimos, ha ocurrido un error");
-	return;
+      System.out.println("Lo sentimos, ha ocurrido un error");
+      return;
     }
     platoPorCocinar.prepararPlatillo();
     cocinero.setPlatoPorCocinar(0);

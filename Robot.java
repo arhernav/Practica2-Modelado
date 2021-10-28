@@ -24,30 +24,30 @@ public class Robot{
   protected Integer platoPorCocinar = 0;
 
 
-    /**
-     * Constructor de la clase
-     */
-    public Robot(){
-      this.estadoSuspendido = new ModoSuspendido(this);
-      this.estadoActivado = new ModoActivado(this);
-      this.estadoCaminando = new ModoCaminando(this);
-      this.estadoAtendiendo = new ModoAtendiendo(this);
-      this.estadoCocinando = new ModoCocinando(this);
-      this.estadoActual = this.estadoSuspendido;
-      this.conjuntoMenus = new  Hashtable<Integer, Plato>();
-    }
+  /**
+   * Constructor de la clase
+   */
+  public Robot(){
+    this.estadoSuspendido = new ModoSuspendido(this);
+    this.estadoActivado = new ModoActivado(this);
+    this.estadoCaminando = new ModoCaminando(this);
+    this.estadoAtendiendo = new ModoAtendiendo(this);
+    this.estadoCocinando = new ModoCocinando(this);
+    this.estadoActual = this.estadoSuspendido;
+    this.conjuntoMenus = new  Hashtable<Integer, Plato>();
+  }
 
-    /**
-     * Agrega los platillos de algun menu al menu interno del robot
-     * Esto permite maneja varios menus y agregar nuevos menus facilmente
-     * @param Iterator Iterador del menu que se quiere agregar
-     */
-    public void agregaMenu(Iterator iterador){
-      while(iterador.hasNext()){
-       Plato plato = (Plato) iterador.next();
-       this.conjuntoMenus.put(plato.id, plato);
-      }
+  /**
+   * Agrega los platillos de algun menu al menu interno del robot
+   * Esto permite maneja varios menus y agregar nuevos menus facilmente
+   * @param Iterator Iterador del menu que se quiere agregar
+   */
+  public void agregaMenu(Iterator iterador){
+    while(iterador.hasNext()){
+      Plato plato = (Plato) iterador.next();
+      this.conjuntoMenus.put(plato.id, plato);
     }
+  }
 
   /**
   * Metodo para definir el estado actual del robot
@@ -156,7 +156,7 @@ public class Robot{
   public void muestraConjuntoMenus(){
     Iterator iteradorConjunto = this.conjuntoMenus.values().iterator();
     while(iteradorConjunto.hasNext()){
-    System.out.println(iteradorConjunto.next());
+      System.out.println(iteradorConjunto.next());
     }
   }
 
@@ -164,26 +164,26 @@ public class Robot{
    * Recibe la orden del usuario y la guarda en la variable platoPorCocinar
    * @return Integer Orden que se va a cocinar
    */ 
-   protected int recibirOrden(){
-     Scanner scan = new Scanner(System.in);
-     Integer orden = 0;
-        do{
-          System.out.print("Ingrese el id de la hamburguesa que quiere: ");
-            if(scan.hasNextInt()){
-            orden = scan.nextInt();
-              if(!this.checarOrdenValida(orden))
-                 System.out.println("Recuerda que debes de ordenar con un id" +
-                          " valido. El id es el numero que aparece antes" +
-                          " del nombre de la hamburguesa");
-               }else{
-                 scan.nextLine();
-                 System.out.println("Recuerda que debes de ordenar con un id" +
-                     " valido. El id es el numero que aparece antes" +
-                     " del nombre de la hamburguesa");
-               }
-        }while(!this.checarOrdenValida(orden));
-      return orden;
-    }
+  protected int recibirOrden(){
+    Scanner scan = new Scanner(System.in);
+    Integer orden = 0;
+    do{
+      System.out.print("Ingrese el id de la hamburguesa que quiere: ");
+      if(scan.hasNextInt()){
+        orden = scan.nextInt();
+        if(!this.checarOrdenValida(orden))
+        System.out.println("Recuerda que debes de ordenar con un id" +
+                           " valido. El id es el numero que aparece antes" +
+                           " del nombre de la hamburguesa");
+      }else{
+        scan.nextLine();
+        System.out.println("Recuerda que debes de ordenar con un id" +
+                           " valido. El id es el numero que aparece antes" +
+                           " del nombre de la hamburguesa");
+      }
+    }while(!this.checarOrdenValida(orden));
+    return orden;
+  }
 
   /**
    * Revisa que el entero recibido concuerde con el id de alguna orden del menu interno
@@ -197,10 +197,10 @@ public class Robot{
     return false;
   }
 
-    /**
-     * Establece el plato por cocinar
-     * @param Integer id del plato a cocinar
-     */  
+  /**
+   * Establece el plato por cocinar
+   * @param Integer id del plato a cocinar
+   */  
   protected void setPlatoPorCocinar(int platoPorCocinar){
     this.platoPorCocinar = platoPorCocinar;
   }
@@ -211,7 +211,5 @@ public class Robot{
    */  
   protected  Plato getPlatoPorCocinar(){
     return this.conjuntoMenus.get(this.platoPorCocinar);
-  }
-    
-    
+  } 
 }
