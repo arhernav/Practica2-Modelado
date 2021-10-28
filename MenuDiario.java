@@ -3,8 +3,8 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 /**
- * Clase para emular el menu diario
- * Esta guarda sus platillos en un <code>ArrayList<code>
+ * Clase que modela el menú diario.
+ * Esta guarda sus platillos en un <code>ArrayList<code>.
  */
 public class MenuDiario implements Iterable{
   
@@ -32,8 +32,9 @@ public class MenuDiario implements Iterable{
   }
   
   /**
-   * Método iterator que devuelve la lista de platillos del menú diario.
-   * @return platillos Lista de platillos.
+   * Método iterator.
+   * Devuelve un iterador de <code>Plato<code> esecializado para este menú.
+   * @return Iterator<Plato> .
    */
   @Override public Iterator iterator(){
     return platillos.iterator();

@@ -2,8 +2,8 @@ import java.lang.Iterable;
 import java.util.Iterator;
 
 /**
- * Clase que modela el menu general del restaurante
- * Esta guarda sus platillos en un array
+ * Clase que modela el menú general del restaurante.
+ * Esta guarda sus platillos en un array.
  */
 public class MenuGeneral implements Iterable{
   
@@ -23,6 +23,7 @@ public class MenuGeneral implements Iterable{
       return false;
     }
     
+    //-----------------------------------------------
     /**
      * Método que devuelve los elementos del arreglo platillos.
      * @return plato Tipo de hamburguesa.
@@ -38,7 +39,7 @@ public class MenuGeneral implements Iterable{
   private Plato[] platillos;
   
   /**
-   * Constructor de la clase
+   * Constructor de la clase.
    * Crea tres hamburguesas para el menú general.
    */
   public MenuGeneral(){

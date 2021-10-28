@@ -16,7 +16,7 @@ public class HamburguesaVegana extends Plato{
   }
   
   /**
-   * Método que prepara el tufo de las hamburguesas veganas.
+   * Método que prepara el tofu de las hamburguesas veganas.
    */
   @Override String prepararCarne(){
     return "sustituto de carne a base de tofu ";
